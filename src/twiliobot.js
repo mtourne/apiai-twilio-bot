@@ -52,11 +52,12 @@ module.exports = class TwilioBot {
             let messageText = req.body.Body;
 
             console.log(chatId, messageText);
-            
+
             if (messageText) {
-                if (!this._sessionIds.has(chatId)) {
-                    this._sessionIds.set(chatId, uuid.v1());
-                }
+              if (!this._sessionIds.has(chatId)) {
+                // set the chatid to the number itself.
+                this._sessionIds.set(chatId, chatId);
+              }
 
                 let apiaiRequest = this._apiaiService.textRequest(messageText,
                     {
