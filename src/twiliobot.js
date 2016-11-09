@@ -56,7 +56,7 @@ module.exports = class TwilioBot {
             if (messageText) {
               if (!this._sessionIds.has(chatId)) {
                 // set the chatid to the number itself.
-                this._sessionIds.set(chatId, chatId);
+                this._sessionIds.set(chatId, chatId.trim());
               }
 
               console.log("Session: '", this._sessionIds.get(chatId), "'")
