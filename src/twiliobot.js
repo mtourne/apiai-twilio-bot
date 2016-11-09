@@ -59,7 +59,7 @@ module.exports = class TwilioBot {
                 this._sessionIds.set(chatId, chatId);
               }
 
-              console.log("Session: ", this._sessionIds.get(chatId))
+              console.log("Session: '", this._sessionIds.get(chatId), "'")
 
                 let apiaiRequest = this._apiaiService.textRequest(messageText,
                     {
